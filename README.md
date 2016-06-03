@@ -7,7 +7,7 @@ Many puzzles here are from the book below. I don't try to write perfect code or 
 
 * For checking duplicates in a collection, it's good to apply some kinds of "hashmap". One ideal approach is to use the value of element as its position in an array of bits. When an element encountered for the first time, we turn the bit at the corresponding position to 1. In Java, we have HashMap class, which is convenient for counting duplicates.
 
-* Python embraces the idea of "consenting adults". For example, there is no private field in a module or a class. Just use the prefix "_" or "__" as a warning to users that they should avoid directly using such fields/methods.
+* Python embraces the idea of "consenting adults". For example, there is no private field in a module or a class. Just use the prefix "\_" or "\_\_" as a warning to users that they should avoid directly using such fields/methods.
 
 ## Software Environment:
 
