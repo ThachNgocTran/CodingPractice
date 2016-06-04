@@ -1,7 +1,17 @@
 package com.company;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.OpenOption;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by iRobot on 01/Jun/2016.
@@ -235,4 +245,51 @@ to hold B Write a method to merge B into A in sorted order
     Solutions to Chapter 15 | Databases
     Solutions to Chapter 18 | Threads and Locks
      */
+
+    /*
+    https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html
+    http://www.drdobbs.com/jvm/java-se-7-new-file-io/231600403
+
+    Reason to use NIO: https://dzone.com/articles/java-nio-vs-io
+    NIO is non-blocking (Buffer oriented). Suitable for P2P (A few threads manage many connections).
+    IO is blocking (Stream oriented). Otherwise.
+
+    But the point of java.nio.file.Files is for "easy and quick" programming!!!
+    http://stackoverflow.com/questions/17084657/most-robust-way-of-reading-a-file-or-stream-using-java-to-prevent-dos-attacks/17165330#17165330
+     */
+    public static void testReadWriteFiles() throws IOException {
+
+        String strFilePathRead = "testFile.txt";
+        String strFilePathWrite = "testFileWrite.txt";
+
+        ///////// READ
+        // Read all bytes at once (not too large file).
+        byte[] byteArray = Files.readAllBytes(Paths.get(strFilePathRead));
+
+        // Read all lines at once (not too large file).
+        List<String> lineArray = Files.readAllLines(Paths.get(strFilePathRead), StandardCharsets.UTF_8);
+
+        // Read using buffer to read, good for large files
+        BufferedReader reader = Files.newBufferedReader(Paths.get(strFilePathRead), StandardCharsets.UTF_8);
+        String line = null;
+        while((line = reader.readLine()) != null){
+            int len = line.length();
+        }
+        reader.close(); // remember to close
+
+        ///////// WRITE
+        // Write all bytes at once
+        Files.write(Paths.get(strFilePathWrite), byteArray, StandardOpenOption.CREATE); // https://docs.oracle.com/javase/7/docs/api/java/nio/file/StandardOpenOption.html
+
+        // Write all lines at once
+        Files.write(Paths.get(strFilePathWrite), lineArray, StandardCharsets.UTF_8, StandardOpenOption.CREATE);
+
+        // Write using buffer to write
+        BufferedWriter writer = Files.newBufferedWriter(Paths.get(strFilePathWrite), StandardCharsets.UTF_8, StandardOpenOption.CREATE);
+        writer.write("abc");
+        writer.newLine();
+        writer.append("xyz");
+        writer.flush();  // if we finish writing data, it's time to flush it; otherwise, just write, write and let the system decide when to flush.
+        writer.close(); // remember to close
+    }
 }

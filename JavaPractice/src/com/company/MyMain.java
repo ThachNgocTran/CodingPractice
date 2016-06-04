@@ -7,7 +7,7 @@ public class MyMain {
 
     public static void main(String[] args) {
         try{
-            MyTest.testMergeSortedArray();
+            MyTest.testReadWriteFiles();
 
             int k = 100;
 
