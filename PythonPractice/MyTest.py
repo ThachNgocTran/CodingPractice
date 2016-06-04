@@ -1,5 +1,5 @@
 import MyUtilities
-
+import io
 
 def test_check_unique_characters():
     str1 = "wefoijhhg38946t239ru02bfewf"
@@ -106,3 +106,37 @@ def test_merge_sorted_array():
     res34 = MyUtilities.merge_sorted_arrays(arr3, arr4)
     print("arr3: %s\narr4: %s\n==> %s" % (str(arr3), str(arr4), str(res34)))
 
+"""
+The library io is recommended for IO in Python 3.
+"""
+def test_read_write_file():
+    FILE_PATH_READ = "testFile.txt"
+    FILE_PATH_WRITE = "testFileWrite.txt"
+    FILE_PATH_WRITE2 = "testFileWrite2.txt"
+
+    # READ
+    # Read text file
+    file_obj_text = io.open(FILE_PATH_READ, "r", encoding='utf8')
+    first_line = file_obj_text.readline() # Push seeker to the next line
+    line_array = file_obj_text.readlines()
+    file_obj_text.close()
+
+    # Read binary file
+    file_obj_bin = io.open(FILE_PATH_READ, "rb")
+    first_5_bytes = file_obj_bin.read(5) # class bytes
+    next_5_bytes = file_obj_bin.read(5)
+    remaining_bytes = file_obj_bin.read()
+    file_obj_bin.close()
+
+    # WRITE
+    # Write text file
+    lines = ["First line", "\n", "Second line", "\n"]
+    file_obj_text2 = io.open(FILE_PATH_WRITE, "w", encoding="utf8")
+    file_obj_text2.writelines(lines) # Have to manually use newline character!!! Workaround: '\n'.join(lines)
+    file_obj_text2.write("Third line")
+    file_obj_text2.close()
+
+    # Write binary file
+    file_obj_bin2 = io.open(FILE_PATH_WRITE2, "wb")
+    file_obj_bin2.write(bytearray([65, 66, 67]))
+    file_obj_bin2.close()

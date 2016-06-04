@@ -21,7 +21,9 @@ try:
     #MyTest.test_calculate_fibonacci()
 
     #MyTest.test_permute_strings()
-    MyTest.test_merge_sorted_array()
+    #MyTest.test_merge_sorted_array()
+
+    MyTest.test_read_write_file()
 
 except Exception as ex:
     print(ex)
