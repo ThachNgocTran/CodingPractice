@@ -7,9 +7,7 @@ public class MyMain {
 
     public static void main(String[] args) {
         try{
-            MyTest.testReadWriteFiles();
-
-            int k = 100;
+            MyUtilities.parallelPrint(10);
 
         } catch (RuntimeException ex){
             System.out.println(String.format("Unexpected error: [%s]", ex.toString()));

@@ -24,8 +24,8 @@
       <file leaf-file-name="MainFile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="459">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -33,10 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyTest.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
+            <state relative-caret-position="2241">
               <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -65,6 +65,28 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MyDataScienceTest.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MyDataScienceTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1377">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDataScienceUtilities.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyDataScienceUtilities.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -79,8 +101,10 @@
       <list>
         <option value="$PROJECT_DIR$/MyClass.py" />
         <option value="$PROJECT_DIR$/MyUtilities.py" />
-        <option value="$PROJECT_DIR$/MainFile.py" />
         <option value="$PROJECT_DIR$/MyTest.py" />
+        <option value="$PROJECT_DIR$/MyDataScienceUtilities.py" />
+        <option value="$PROJECT_DIR$/MainFile.py" />
+        <option value="$PROJECT_DIR$/MyDataScienceTest.py" />
       </list>
     </option>
   </component>
@@ -101,7 +125,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -114,7 +138,13 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -303,20 +333,20 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17389007" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982002" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39864865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -337,15 +367,52 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="type(first5Bytes)" language="Python" />
+        <watch expression="temp_df['liver_res']" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MainFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2943">
+          <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyUtilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7398">
+          <caret line="274" column="0" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MainFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -569,22 +636,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MyTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2241">
+          <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MainFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        <state relative-caret-position="459">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyTest.py">
+    <entry file="file://$PROJECT_DIR$/MyDataScienceUtilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyDataScienceTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

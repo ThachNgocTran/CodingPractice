@@ -1,5 +1,6 @@
 import MyTest
 import MyClass
+import MyDataScienceTest
 
 try:
     #temp_arr = [1, 6, 2, 9, 5, 28, 29, 5]
@@ -23,7 +24,8 @@ try:
     #MyTest.test_permute_strings()
     #MyTest.test_merge_sorted_array()
 
-    MyTest.test_read_write_file()
+    #MyTest.test_read_write_file()
+    MyDataScienceTest.test_data_preprocessing()
 
 except Exception as ex:
     print(ex)

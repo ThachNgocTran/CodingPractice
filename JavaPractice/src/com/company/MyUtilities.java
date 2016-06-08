@@ -1,7 +1,11 @@
 package com.company;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -349,6 +353,67 @@ public class MyUtilities {
 
         return result;
     }
+
+    /*
+    https://jsoup.org/
+    JSoup is an Java HTML Parser.
+
+    Selector syntax: https://jsoup.org/apidocs/org/jsoup/select/Selector.html
+     */
+
+    public static String extractTextFromHtml(String url, String path) throws IOException, MyBusinessException {
+        String extractedTxt = "";
+
+        // Easiest way to get a user agent string for a browser: just visit http://www.whoishostingthis.com/tools/user-agent/
+        String USER_AGENT = "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36";
+        int TIME_OUT = 10000;
+
+        if (url == null || url.length() == 0 || path == null || path.length() == 0)
+            throw new IllegalArgumentException("Inputs are invalid");
+
+        Document doc = Jsoup.connect(url).userAgent(USER_AGENT).timeout(TIME_OUT).get();
+        Element ele = doc.select(path).first();
+
+        if (ele == null)
+            throw new MyBusinessException(String.format("Element not found: %s", path), 1);
+
+        extractedTxt = ele.text();
+
+        return extractedTxt;
+    }
+
+    /*
+    http://stackoverflow.com/questions/37324372/jsoup-parsing-parsing-multiple-links-simultaneously
+    A very 'convenient' way to quickly parallelize processing for each item in the list.
+     */
+    public static void parallelPrint(int numParallel){
+        if (numParallel <= 0)
+            throw new IllegalArgumentException("Input is invalid");
+
+        ArrayList<Integer> arrList = new ArrayList<>();
+        for(int i = 0; i < numParallel; i++){
+            arrList.add(i);
+        }
+
+        /*
+        Each time this code snippet runs, the output is different! Thanks to parallelism.
+         */
+        arrList.parallelStream().forEach(link -> {
+            try{
+                System.out.println(String.format("Processing: %d", link));
+            }
+            catch (Exception ex){
+                System.out.println(ex.toString());
+            }
+        });
+    }
+
+    /*
+    Java Concurrency:
+    http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
+    http://stackoverflow.com/questions/12759676/java-jsoup-using-threads-not-working
+
+     */
 
 
 }

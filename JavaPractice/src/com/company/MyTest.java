@@ -1,8 +1,11 @@
 package com.company;
 
+import org.jsoup.select.Selector;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -291,5 +294,66 @@ to hold B Write a method to merge B into A in sorted order
         writer.append("xyz");
         writer.flush();  // if we finish writing data, it's time to flush it; otherwise, just write, write and let the system decide when to flush.
         writer.close(); // remember to close
+    }
+
+    public static void testExtractTextFromHtml(){
+        try{
+            // TEST CASE 1: normal case
+            try{
+                String str1 = "http://www.amazon.com/LG-Nexus-Unlocked-Cellphone-Black/dp/B00GGQJL2K/";
+                String sel1 = "span[id='priceblock_ourprice']";
+                String extracted1 = MyUtilities.extractTextFromHtml(str1, sel1);
+
+                System.out.println(String.format("For [%s] with path [%s]:\n==> %s", str1, sel1, extracted1));
+            }
+            catch (MyBusinessException mbe){
+                System.out.println(String.format("MyBusinessException: %s", mbe.toString()));
+            }
+
+            // TEST CASE 2: wrong url
+            try{
+                String str2 = "http://weefergirjkger.com/";
+                String sel2 = "something";
+                String extracted2 = MyUtilities.extractTextFromHtml(str2, sel2);
+
+                System.out.println(String.format("For [%s] with path [%s]:\n==> %s", str2, sel2, extracted2));
+            }
+            catch (UnknownHostException uhe){
+                System.out.println(String.format("UnknownHostException: %s", uhe.toString()));
+            }
+            catch (MyBusinessException mbe){
+                System.out.println(String.format("MyBusinessException: %s", mbe.toString()));
+            }
+
+            // TEST CASE 3: element not found despite correct selector syntax
+            try{
+                String str3 = "http://www.amazon.com/LG-Nexus-Unlocked-Cellphone-Black/dp/B00GGQJL2K/";
+                String sel3 = "span[id='fehf34623rh09']";
+                String extracted3 = MyUtilities.extractTextFromHtml(str3, sel3);
+
+                System.out.println(String.format("For [%s] with path [%s]:\n==> %s", str3, sel3, extracted3));
+            }
+            catch (MyBusinessException mbe){
+                System.out.println(String.format("MyBusinessException: %s", mbe.toString()));
+            }
+
+            // TEST CASE 4: wrong selector syntax
+            try{
+                String str4 = "http://www.amazon.com/LG-Nexus-Unlocked-Cellphone-Black/dp/B00GGQJL2K/";
+                String sel4 = "span(id='feh')";
+                String extracted4 = MyUtilities.extractTextFromHtml(str4, sel4);
+
+                System.out.println(String.format("For [%s] with path [%s]:\n==> %s", str4, sel4, extracted4));
+            }
+            catch (Selector.SelectorParseException mbe){
+                System.out.println(String.format("SelectorParseException: %s", mbe.toString()));
+            }
+            catch (MyBusinessException mbe){
+                System.out.println(String.format("MyBusinessException: %s", mbe.toString()));
+            }
+        }
+        catch (IOException ex){
+            System.out.println(String.format("IOException: %s", ex.toString()));
+        }
     }
 }
