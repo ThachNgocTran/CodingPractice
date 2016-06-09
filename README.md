@@ -7,6 +7,8 @@ Normally there are many ways to overcome an issue (reading files, for example). 
 
 I often note down those findings using Google Docs, but now GitHub is such a much better way. Keep everything on the cloud, and they will be readily available when needed.
 
+Mastering a language requires dedication: constantly eat, sleep, play with it for a looong time. (10,000 Hours of Practice [2]) But I find myself caught in a dilemma: When I took Data Science Specialization on Coursera, their main language was R. In six months, I practiced R. Then I moved on Machine Learning (Prof. Andrew Ng) also on Coursera, I practiced Octave. In reality, Java is often used as an ideal language for backend system, especially in Big Data ecosystem. So I practice Java. But Big Data eventually involves Data Science, so Python (scikit, pandas...) is the next language to master. Nevertheless, in near future, Big Data/Data Science are carried out in Distributed Computing (Scaling up is no longer feasible because of huge amounts of data), one must learn Scala, thanks to Apache Spark...
+
 ## Interesting points learnt:
 
 * For checking duplicates in a collection, it's good to apply some kinds of "hashmap". One ideal approach is to use the value of element as its position in an array of bits. When an element encountered for the first time, we turn the bit at the corresponding position to 1. In Java, we have HashMap class, which is convenient for counting duplicates.
@@ -25,4 +27,6 @@ I often note down those findings using Google Docs, but now GitHub is such a muc
 
 ## References:
 
-* [Cracking the Coding Interview (Gayle Laakmann McDowell)] (http://www.amazon.com/Cracking-Coding-Interview-6th-Programming/dp/0984782850/)
+1. [Cracking the Coding Interview (Gayle Laakmann McDowell)] (http://www.amazon.com/Cracking-Coding-Interview-6th-Programming/dp/0984782850/)
+
+2. [10,000 Hours of Practice](http://www.wisdomgroup.com/blog/10000-hours-of-practice/)

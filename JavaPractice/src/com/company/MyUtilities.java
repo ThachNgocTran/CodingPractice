@@ -1,6 +1,5 @@
 package com.company;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -218,6 +217,9 @@ public class MyUtilities {
         return result;
     }
 
+    /*
+    Fibonacci with recursion
+     */
     public static int calculateFibonacci(int inNumber){
         if (inNumber <= 0)
             throw new IllegalArgumentException("Input is invalid");
@@ -228,6 +230,9 @@ public class MyUtilities {
         return calculateFibonacci(inNumber-1) + calculateFibonacci(inNumber - 2);
     }
 
+    /*
+    Fibonacci without recursion
+     */
     public static int calculateFibonacci_nonRecursive(int intNumber){
         if (intNumber <= 0)
             throw new IllegalArgumentException("Input is invalid");
@@ -251,6 +256,10 @@ public class MyUtilities {
         return result;
     }
 
+    /*
+    String permutation with recursion.
+    For example: "abc" ==> 3! = 6 ways to permute: abc, acb, bac, cab, bca, cba
+     */
     public static ArrayList<String> permutateString(String inStr){
         ArrayList<String> permStrs = new ArrayList<>();
 
