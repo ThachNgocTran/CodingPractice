@@ -17,13 +17,13 @@ Mastering a language requires dedication: constantly eat, sleep, play with it fo
 
 ## Software Environment:
 
-* IntelliJ IDEA Community Edition 2016.1.2
+* IntelliJ IDEA Community Edition 2016.3.7
 
 * PyCharm Community Edition 2016.1.4
 
 * Python v3.5 64-bit
 
-* Java v1.8.0_92 64-bit
+* Java v1.8.0_131 64-bit
 
 ## References:
 
