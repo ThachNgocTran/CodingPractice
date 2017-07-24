@@ -1,13 +1,20 @@
 package com.company;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import org.apache.http.util.Args;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 /**
  * Created by iRobot on 01/Jun/2016.
@@ -418,11 +425,73 @@ public class MyUtilities {
     }
 
     /*
-    Java Concurrency:
-    http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
-    http://stackoverflow.com/questions/12759676/java-jsoup-using-threads-not-working
-
+    When downloading data from a MongoDB/DynamoDB table, the object representing a row may contain arbitrary columns.
+    We may want to open the table offline as "csv" file. But CSV has a predetermined fixed set of columns.
+    This function is useful to save those objects into a well-formed CSV.
+    Any row that lack info for a certain column will contain NA (or emptyString) instead.
      */
+    public static void makeCsvFromJsonData(List<Map<String, String>> lstOfDocuments,
+                                           String filePath,
+                                           String emptyString) throws IOException {
 
+        OutputStreamWriter writer = null;
 
+        try{
+
+            Args.notNull(lstOfDocuments, "lstOfDocuments");
+            Args.notEmpty(filePath, "filePath");
+            Args.notNull(emptyString, "emptyString");
+
+            HashSet<String> uniqueKeys = Sets.newHashSet();
+
+            // FIRST PASS: get all unique keys (aka. headers).
+            for(Map<String, String> doc: lstOfDocuments){
+                for(String key: doc.keySet()){
+                    uniqueKeys.add(key);
+                }
+            }
+
+            // Sort the key appearance, for better visualization.
+            ArrayList<String> sortedList = new ArrayList(uniqueKeys);
+            Collections.sort(sortedList);
+
+            // SECOND PASS: write to CSV.
+            CSVFormat csvFileFormat = CSVFormat.DEFAULT.withRecordSeparator("\n");
+            writer = new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8);
+            CSVPrinter csvFilePrinter = new CSVPrinter(writer, csvFileFormat);
+
+            // print headers
+            csvFilePrinter.printRecord(sortedList);
+
+            for(Map<String, String> doc: lstOfDocuments){
+
+                // print products
+                List prod = Lists.newArrayList();
+
+                for(String key: sortedList){
+                    String dataToPut = "";
+                    if (doc.containsKey(key)){
+                        dataToPut = doc.get(key);
+                    } else {
+                        dataToPut = emptyString;
+                    }
+
+                    prod.add(dataToPut);
+                }
+
+                csvFilePrinter.printRecord(prod);
+            }
+        }
+        finally {
+            if (writer != null){
+                try{
+                    writer.flush(); // whatever happens, try closing the file gracefully.
+                    writer.close();
+                }
+                catch (Throwable th){
+                    // ignore
+                }
+            }
+        }
+    }
 }
