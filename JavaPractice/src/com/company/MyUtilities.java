@@ -494,4 +494,42 @@ public class MyUtilities {
             }
         }
     }
+
+    /*
+    http://stackoverflow.com/questions/2730865/how-do-i-calculate-a-good-hash-code-for-a-list-of-strings
+     */
+    /*
+    Get hashCode value from an array of strings. This hashCode can be used to identify unique objects based on their internal properties.
+    If an object is composed of long/integer..., convert these to strings.
+     */
+    public static int getHashCode(String[] arr){
+
+        final int prime = 31;
+        int result = 1;
+
+        for(String s : arr )
+        {
+            result = result * prime + s.hashCode();
+        }
+
+        return result;
+    }
+
+    /*
+    Generate unique UUID.
+     */
+    public static String generateUUID(){
+        return UUID.randomUUID().toString();
+    }
+
+    /*
+    Convert to and from Base64.
+     */
+    public static String encodeBase64(byte[] input){
+        return Base64.getEncoder().encodeToString(input);
+    }
+
+    public static byte[] decodeBase64(String input){
+        return Base64.getDecoder().decode(input);
+    }
 }
